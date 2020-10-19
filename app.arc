@@ -3,7 +3,11 @@ begin-app
 
 @http
 get /
+get /register
+get /logout
+get /admin
 
+post /register
 
 @tables
 data
