@@ -1,2 +1,0 @@
-# auth-rebuild
-Begin app
