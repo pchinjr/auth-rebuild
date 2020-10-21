@@ -7,7 +7,7 @@ async function index(req) {
   return {
     html: layout({
       account: req.session.account,
-      body: 'hi from index'
+      body: '<p>Please log in or register for a new account</p>'
     })
   }
 }

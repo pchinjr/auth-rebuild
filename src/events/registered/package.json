@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@architect/functions": "^3.13.3",
+    "@begin/data": "^1.2.3",
+    "@sendgrid/mail": "^7.3.0"
+  }
+}

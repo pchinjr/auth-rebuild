@@ -28,6 +28,9 @@ async function register(req) {
     password: hash
   })
 
+  // publish a 'registered' event to dispatch email
+  await arc.events.publish({ name: 'registered', payload: result })
+
   return {
     session: {
       account: {
