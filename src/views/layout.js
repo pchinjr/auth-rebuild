@@ -1,8 +1,8 @@
 module.exports = function layout(params) {
 
-  let logout = `<a href=/logout>logout</a>`
+  let logout = `<a href=/logout>Logout</a> | <a href=/admin>Admin</a>`
 
-  let notAuthed = `<a href=/login>login</a> | <a href=/register>register</a> | <a href=/reset>Reset Password</a>`
+  let notAuthed = `<a href=/login>Login</a> | <a href=/register>Register</a> | <a href=/reset>Reset Password</a>`
 
   return `
   <!doctype html>

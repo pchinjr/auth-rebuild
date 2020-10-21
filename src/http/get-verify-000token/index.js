@@ -10,15 +10,17 @@ async function verify(req) {
 
   let result = await data.get({
     table: 'tokens',
-    token
+    key:token
   })
 
-  if(result[0].key === token) {
-    // await data.set({
-    //   table:'accounts',
-    //   key: result[0].email,
-    //   verified: true
-    // })
+  // read account, mutate the verified:true
+  
+  if(result.key === token) {
+    await data.set({
+      table:'accounts',
+      key: result.email,
+      verified: true
+    })
     return {
       html: layout({
         account: req.session.account,
