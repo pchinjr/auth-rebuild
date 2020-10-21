@@ -14,11 +14,11 @@ async function verify(req) {
   })
 
   if(result[0].key === token) {
-    await data.set({
-      table:'accounts',
-      key: result[0].email,
-      verified: true
-    })
+    // await data.set({
+    //   table:'accounts',
+    //   key: result[0].email,
+    //   verified: true
+    // })
     return {
       html: layout({
         account: req.session.account,

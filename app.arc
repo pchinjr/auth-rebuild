@@ -14,6 +14,7 @@ get /verify/:token
 
 post /register
 post /login
+post /register/nuke
 
 @tables
 data

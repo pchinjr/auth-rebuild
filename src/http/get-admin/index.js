@@ -9,6 +9,12 @@ async function admin(req) {
     account: req.session.account,
     body: `
     <p>This is protected.</p>
+    <form action=/register/nuke method=post>
+      Nuke your account
+      <input name=email type=email placeholder="add your email" required>
+      <input name=password type=password required>
+      <button>Nuke</button>
+    </form>
     `
   })
 
