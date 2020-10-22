@@ -23,7 +23,7 @@ async function verify(req) {
 
     let verified = await data.set({
       table: 'accounts',
-      key: account.email,
+      key: account.key,
       password: account.password,
       verified: true
     })
