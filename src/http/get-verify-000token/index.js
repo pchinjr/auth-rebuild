@@ -1,11 +1,10 @@
 let arc = require('@architect/functions')
 let data = require('@begin/data')
 let layout = require('@architect/views/layout')
+
 exports.handler = arc.http.async(verify)
 
-
 async function verify(req) {
-
   let token = req.params.token
 
   let result = await data.get({
@@ -14,13 +13,22 @@ async function verify(req) {
   })
 
   // read account, mutate the verified:true
-  
+
   if(result.key === token) {
-    await data.set({
+    let account = await data.get({
       table:'accounts',
       key: result.email,
+    })
+    console.log(account)
+
+    let verified = await data.set({
+      table: 'accounts',
+      key: account.email,
+      password: account.password,
       verified: true
     })
+    console.log(verified)
+
     return {
       html: layout({
         account: req.session.account,
