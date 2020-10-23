@@ -91,6 +91,12 @@ this will delete the account
 
 get reset is a lot like the registration flow plus the verification token in one step. The user will post an email address to `post-reset`
 
+## create `post-reset-password`
+
 
 ## role based access control (RBAC)
-adding flag or property of role(ie. admin, csr, QATeam). Feature flagging for different tiers of service. 
+adding flag or property of role(ie. admin, csr, QATeam). Feature flagging for different tiers of service.
+
+
+Shopping cart
+get /cart
