@@ -20,7 +20,7 @@ async function registered(event) {
       to: email,
       from: 'paul@begin.com',
       subject: 'Welcome to the service',
-      text: `verify your email email ${process.env.BASE_URL}/verify/${token.key}`,
+      text: `verify your email ${process.env.BASE_URL}/verify/${token.key}`,
     });
     console.log(result, 'made it here')
   } catch (error) {

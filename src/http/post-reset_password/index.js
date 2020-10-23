@@ -23,6 +23,7 @@ async function reset(req) {
     let salt = bcrypt.genSaltSync(10)
     let hash = bcrypt.hashSync(req.body.password, salt)
 
+    // loosing the verified tag (update one value)
     await data.set({
       table: 'accounts',
       key: email,

@@ -14,6 +14,9 @@ get /verify/:token
 get /reset
 get /reset/:token
 
+get /cart
+post /cart
+
 post /register
 post /login
 post /register/nuke
