@@ -8,18 +8,19 @@ exports.handler = arc.http.async(auth,cart)
 async function cart(req) {
 
 
-  let result = await data.get({
+  let cart = await data.get({
     table: `shopping-${req.session.account.email}`
   })
 
-  console.log(result)
   let form = `
-  <p> this is your cart, yay </p>
+  <p> limited edition praise cage candle </p>
+
   <form action=/cart method=post>
   <input type=hidden name=productId value=0001>
   <button> add to cart </button>
-  </form>
-  ${JSON.stringify(result)}
+
+  <p> this is your cart, yay </p>
+  ${JSON.stringify(cart)}
   `
 
   return {

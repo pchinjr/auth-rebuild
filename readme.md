@@ -99,4 +99,10 @@ adding flag or property of role(ie. admin, csr, QATeam). Feature flagging for di
 
 
 Shopping cart
-get /cart
+## create get cart
+
+## create post cart
+
+## modify layout to add link to cart
+
+## delete item from cart
