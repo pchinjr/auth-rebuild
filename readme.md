@@ -105,4 +105,8 @@ Shopping cart
 
 ## modify layout to add link to cart
 
-## delete item from cart
+## delete cart
+
+## update cart
+
+## stripe integration

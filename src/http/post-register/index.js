@@ -18,10 +18,11 @@ async function valid(req) {
 }
 
 async function register(req) {
-
+  // salt the password and generate a hash
   let salt = bcrypt.genSaltSync(10)
   let hash = bcrypt.hashSync(req.body.password, salt)
 
+  //save hash and email account to db
   let result = await data.set({
     table: 'accounts',
     key: req.body.email,

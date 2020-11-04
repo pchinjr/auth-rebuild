@@ -4,7 +4,6 @@ let layout = require('@architect/views/layout')
 
 exports.handler = arc.http.async(reset)
 
-
 async function reset(req) {
 
   let token = req.params.token
@@ -37,6 +36,4 @@ async function reset(req) {
       })
     }
   }
-
-
 }

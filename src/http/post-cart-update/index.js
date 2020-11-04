@@ -13,20 +13,20 @@ async function cart(req) {
   })
 
   let item = req.body
+  item.quantity = Number(item.quantity)
   let isInCart = cart.find(i => i.key === item.productId)
 
-  if (isInCart) {
-    await data.incr({
+  if (isInCart && item.quantity > 0) {
+    await data.set({
       table,
       key: item.productId,
-      prop: 'quantity'
+      quantity: item.quantity
     })
   } else {
-   await data.set({
-     table,
-     key: item.productId,
-     quantity: 1
-   })
+    await data.destroy({
+      table,
+      key: item.productId
+    })
   }
 
   return {

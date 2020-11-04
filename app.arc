@@ -16,6 +16,8 @@ get /reset/:token
 
 get /cart
 post /cart
+post /cart/reset
+post /cart/update
 
 post /register
 post /login

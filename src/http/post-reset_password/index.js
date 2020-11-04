@@ -7,7 +7,6 @@ let bcrypt = require('bcryptjs')
 exports.handler = arc.http.async(reset)
 
 async function reset(req) {
-  console.log(req.body)
 
   //confirm values are the same and validate token to get email
   if (req.body.password === req.body.confirm) {
@@ -19,15 +18,21 @@ async function reset(req) {
     })
     let email = result.email
 
+    //look up account for verified flag
+    let account = await data.get({
+      table: 'accounts',
+      key: email
+    })
+
     // save the new password to the account record
     let salt = bcrypt.genSaltSync(10)
     let hash = bcrypt.hashSync(req.body.password, salt)
 
-    // loosing the verified tag (update one value)
     await data.set({
       table: 'accounts',
       key: email,
-      password: hash
+      password: hash,
+      verified: account.verified
     })
 
     return {
